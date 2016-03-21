@@ -6,6 +6,8 @@ FROM centos:7
 MAINTAINER Qingfeng Dubu <1135326346@qq.com>
 
 ENV REFRESHED_AT 2015-06-05
+ENV MY_WGET_FILE_URI http://cron.iwap.cf
+ENV MY_WGET_FILE_NAME google.zip
 
 RUN yum -y update; yum clean all
 RUN yum -y install epel-release; yum clean all
@@ -36,16 +38,26 @@ ADD supervisord.conf /etc/
 #ADD index.php /var/www/index.php
 
 # Add the file 
-ADD myfile.sh /myfile.sh
-RUN chmod 755 /myfile.sh
+#ADD myfile.sh /myfile.sh
+#RUN chmod 755 /myfile.sh
 
 # Install unzip 
 # Install wget 
 RUN yum -y install unzip; yum clean all
 RUN yum -y install wget; yum clean all
 
-RUN sh /myfile.sh
+#RUN sh /myfile.sh
 
+RUN rm -rf /var/www/*
+RUN wget -P /var/www/ $MY_WGET_FILE_URI/$MY_WGET_FILE_NAME
+RUN echo "========================================================================"
+RUN echo ""
+RUN echo "==the uri is '$MY_WGET_FILE_URI'=="
+RUN echo "==the file is '$MY_WGET_FILE_NAME'=="
+RUN echo ""
+RUN echo "========================================================================"
+RUN unzip /var/www/$MY_WGET_FILE_NAME -d /var/www/
+RUN rm -rf /var/www/$MY_WGET_FILE_NAME
 # Set the port to 80 
 EXPOSE 80
 
