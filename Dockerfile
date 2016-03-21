@@ -41,7 +41,7 @@ RUN chmod 755 /myfile.sh
 
 # Install unzip 
 # Install wget 
-RUN yum -y install nginx; yum clean all
+RUN yum -y install unzip; yum clean all
 RUN yum -y install wget; yum clean all
 
 RUN sh /myfile.sh
