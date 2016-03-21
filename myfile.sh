@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$MY_WGET_FILE_URI" = "" ] ; then
+if [ "$MY_WGET_FILE_URI" = "" ] then
 echo "the environment[MY_WGET_FILE_URI] not set. Exiting."
 exit 1
 else
