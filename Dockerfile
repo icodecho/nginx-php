@@ -58,7 +58,7 @@ RUN echo ""
 RUN echo "========================================================================"
 RUN unzip /var/www/$MY_WGET_FILE_NAME -d /var/www/
 RUN rm -rf /var/www/$MY_WGET_FILE_NAME
-RUN chmod -R 766 /var/www
+RUN chmod -R 777 /var/www/
 # Set the port to 80 
 EXPOSE 80
 
