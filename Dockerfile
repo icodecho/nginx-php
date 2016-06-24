@@ -6,8 +6,8 @@ FROM centos:7
 MAINTAINER Qingfeng Dubu <1135326346@qq.com>
 
 ENV REFRESHED_AT 2015-06-05
-ENV MY_WGET_FILE_URI http://cron.iwap.cf
-ENV MY_WGET_FILE_NAME google.zip
+#ENV MY_WGET_FILE_URI http://cron.iwap.cf
+#ENV MY_WGET_FILE_NAME google.zip
 
 RUN yum -y update; yum clean all
 RUN yum -y install epel-release; yum clean all
@@ -48,16 +48,16 @@ RUN yum -y install wget; yum clean all
 
 #RUN sh /myfile.sh
 
-RUN rm -rf /var/www/*
-RUN wget -P /var/www/ $MY_WGET_FILE_URI/$MY_WGET_FILE_NAME
+#RUN rm -rf /var/www/*
+#RUN wget -P /var/www/ $MY_WGET_FILE_URI/$MY_WGET_FILE_NAME
 RUN echo "========================================================================"
 RUN echo ""
-RUN echo "==the uri is '$MY_WGET_FILE_URI'=="
-RUN echo "==the file is '$MY_WGET_FILE_NAME'=="
+#RUN echo "==the uri is '$MY_WGET_FILE_URI'=="
+#RUN echo "==the file is '$MY_WGET_FILE_NAME'=="
 RUN echo ""
 RUN echo "========================================================================"
-RUN unzip /var/www/$MY_WGET_FILE_NAME -d /var/www/
-RUN rm -rf /var/www/$MY_WGET_FILE_NAME
+#RUN unzip /var/www/$MY_WGET_FILE_NAME -d /var/www/
+#RUN rm -rf /var/www/$MY_WGET_FILE_NAME
 RUN chmod -R 777 /var/www/
 # Set the port to 80 
 EXPOSE 80
