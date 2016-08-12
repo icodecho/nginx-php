@@ -12,7 +12,7 @@ ENV REFRESHED_AT 2015-06-05
 RUN yum -y update; yum clean all
 RUN yum -y install epel-release; yum clean all
 
-RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+#RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 ADD nginx.repo /etc/yum.repos.d/nginx.repo
 
