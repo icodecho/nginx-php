@@ -9,4 +9,5 @@ ADD icodecho.php /var/www/html/icodecho.php
 
 EXPOSE 80
 
-CMD ["service httpd start"]
+CMD ["which httpd"]
+#CMD ["service httpd start"]
