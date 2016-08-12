@@ -7,4 +7,4 @@ RUN yum -y install httpd httpd-devel && \
     
 ADD icodecho.php /var/www/html/icodecho.php
     
-CMD ["/etc/init.d/httpd restart"]
+CMD ["/etc/init.d/httpd start"]
