@@ -17,9 +17,9 @@ RUN yum -y install epel-release; yum clean all
 ADD nginx.repo /etc/yum.repos.d/nginx.repo
 
 # Install supervisor
-RUN yum install -y python-setuptools; yum clean all
-RUN easy_install pip
-RUN pip install supervisor
+#RUN yum install -y python-setuptools; yum clean all
+#RUN easy_install pip
+#RUN pip install supervisor
 
 # Install nginx 
 RUN yum -y install nginx; yum clean all
@@ -63,4 +63,4 @@ RUN chmod -R 777 /var/www/
 EXPOSE 80
 
 # Executing supervisord
-CMD ["supervisord", "-n"]
+#CMD ["supervisord", "-n"]
