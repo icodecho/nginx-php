@@ -1,4 +1,4 @@
-FROM centos:6.5
+FROM centos:centos6
 
 RUN yum install httpd httpd-devel && \
     yum install php php-devel && \
