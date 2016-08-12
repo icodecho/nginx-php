@@ -6,7 +6,7 @@ FROM centos:7
 MAINTAINER Qingfeng Dubu <1135326346@qq.com>
 
 ENV REFRESHED_AT 2015-06-05
-#ENV MY_WGET_FILE_URI http://cron.iwap.cf
+#ENV MY_WGET_FILE_URI http://www.example.com
 #ENV MY_WGET_FILE_NAME google.zip
 
 RUN yum -y update; yum clean all
@@ -35,7 +35,7 @@ ADD default.conf /etc/nginx/conf.d/default.conf
 ADD supervisord.conf /etc/
 
 # Add the file
-#ADD index.php /var/www/index.php
+ADD icodecho.php /var/www/icodecho.php
 
 # Add the file 
 #ADD myfile.sh /myfile.sh
@@ -50,12 +50,12 @@ RUN yum -y install wget; yum clean all
 
 #RUN rm -rf /var/www/*
 #RUN wget -P /var/www/ $MY_WGET_FILE_URI/$MY_WGET_FILE_NAME
-RUN echo "========================================================================"
-RUN echo ""
+#RUN echo "========================================================================"
+#RUN echo ""
 #RUN echo "==the uri is '$MY_WGET_FILE_URI'=="
 #RUN echo "==the file is '$MY_WGET_FILE_NAME'=="
-RUN echo ""
-RUN echo "========================================================================"
+#RUN echo ""
+#RUN echo "========================================================================"
 #RUN unzip /var/www/$MY_WGET_FILE_NAME -d /var/www/
 #RUN rm -rf /var/www/$MY_WGET_FILE_NAME
 RUN chmod -R 777 /var/www/
