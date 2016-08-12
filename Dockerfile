@@ -9,5 +9,4 @@ ADD icodecho.php /var/www/html/icodecho.php
 
 EXPOSE 80
 
-CMD ["which httpd"]
-#CMD ["service httpd start"]
+RUN /etc/init.d/httpd restart
